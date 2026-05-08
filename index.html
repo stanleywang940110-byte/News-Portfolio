@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="glass-header">
+            <div class="header-content">
+                <h1>News Portfolio</h1>
+
+            </div>
+        </header>
+
+        <main>
+            <!-- 批次新增面板 -->
+            <div id="addPanel" class="add-panel" style="display: none;">
+                <div class="add-panel-content">
+                    <h3>新增新聞作品</h3>
+                    <div class="input-group">
+                        <select id="categorySelect" class="category-select">
+                            <option value="純淨新聞">純淨新聞</option>
+                            <option value="廣播新聞">廣播新聞</option>
+                            <option value="影音新聞">影音新聞</option>
+                            <option value="專題新聞">專題新聞</option>
+                            <option value="其他">其他</option>
+                        </select>
+                        <textarea id="batchUrlInput" placeholder="在此貼上網址（支援多筆，每行一個）"></textarea>
+                    </div>
+                    <div class="panel-actions">
+                        <button id="cancelAddBtn" class="secondary-btn">取消</button>
+                        <button id="confirmAddBtn">確認新增</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="error-message" class="error-toast"></div>
+
+            <div class="filter-tabs">
+                <button id="openAddBtn" class="add-circle-btn" title="新增作品">＋</button>
+                <button class="filter-btn active" data-filter="全部">全部</button>
+                <button class="filter-btn" data-filter="純淨新聞">純淨</button>
+                <button class="filter-btn" data-filter="廣播新聞">廣播</button>
+                <button class="filter-btn" data-filter="影音新聞">影音</button>
+                <button class="filter-btn" data-filter="專題新聞">專題</button>
+                <button class="filter-btn" data-filter="其他">其他</button>
+            </div>
+
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- 卡片將會動態生成於此 -->
+            </div>
+        </main>
+        
+        <footer>
+            <p>News Portfolio Tool &copy; 2026. Data is stored locally in your browser.</p>
+        </footer>
+    </div>
+    
+    <!-- 預設初始資料，供無資料時展示 -->
+    <script>
+        const initialUrl = "https://vnccu.nccu.edu.tw/PageDoc/Detail?fid=11226&id=34364";
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
